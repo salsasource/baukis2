@@ -1,3 +1,5 @@
+@import "colors";
+
 div#wrapper {
   div#container {
     h1 {
@@ -6,7 +8,7 @@ div#wrapper {
       font-size: 16px;
       font-weight: normal;
       background-color: #1a3333;
-      color: #eeeeee;
+      color: $light_gray;
     }
   }
 }
