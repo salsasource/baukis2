@@ -39,5 +39,4 @@ ActiveRecord::Schema.define(version: 2022_06_22_111745) do
     t.index "lower((email)::text)", name: "index_staff_members_on_LOWER_email", unique: true
     t.index ["family_name_kana", "given_name_kana"], name: "index_staff_members_on_family_name_kana_and_given_name_kana"
   end
-
 end
