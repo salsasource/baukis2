@@ -6,5 +6,6 @@ class Admin::StaffEventsController < Admin::Base
     else
       @events = StaffEvent.order(occurred_at: :desc)
     end
+    @events = StaffEvent.page(params[:page])
   end
 end
