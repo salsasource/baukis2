@@ -1,6 +1,12 @@
 require "rails_helper"
 
 describe "管理者による職員管理" do
+  context "ログイン前" do
+    include_examples "a protected admin controller", "admin/staff_members"
+  end
+end
+
+describe "管理者による職員管理" do
   let(:administrator) { create(:administrator) }
 
   before do
