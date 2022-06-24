@@ -30,8 +30,13 @@ describe "職員による自分のアカウントの管理" do
       get staff_account_url
       expect(response).to redirect_to(staff_root_url)
     end
+
+    example "セッションタイムアウト" do
+      travel_to Staff::Base::TIMEOUT.from_now.advance(seconds: 1)
+      get staff_account_url
+      expect(response).to redirect_to(staff_login_url)
+    end
   end
-  
 
   describe "更新" do
     let(:params_hash) { attributes_for(:staff_member) }
