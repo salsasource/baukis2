@@ -12,6 +12,7 @@ class Staff::Base < ApplicationController
 
   helper_method :current_staff_member
 
+  # アクセス制御
   private def authorize
     unless current_staff_member
       flash.alert = "職員としてログインしてください。"
@@ -19,6 +20,7 @@ class Staff::Base < ApplicationController
     end
   end
 
+  # 強制ログアウト
   private def check_account
     if current_staff_member && !current_staff_member.active?
       session.delete(:staff_member_id)
@@ -27,6 +29,7 @@ class Staff::Base < ApplicationController
     end
   end
 
+  # セッションタイムアウト
   TIMEOUT = 60.minutes
 
   private def check_timeout
