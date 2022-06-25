@@ -13,6 +13,9 @@ family_names = %w{
   鈴木:スズキ:suzuki
   高橋:タカハシ:takahashi
   田中:タナカ:tanaka
+  山本:ヤマモト:yamamoto
+  中川:ナカガワ:nakagawa
+  森脇:モリワキ:moriwaki
 }
 
 given_names = %w{
@@ -21,11 +24,14 @@ given_names = %w{
   松子:マツコ:matsuko
   竹子:タケコ:takeko
   梅子:ウメコ:umeko
+  真司:シンジ:shinji
+  瑛太:エイタ:eita
+  明:アキラ:akira
 }
 
-20.times do |n|
-  fn = family_names[n % 4].split(":")
-  gn = given_names[n % 5].split(":")
+56.times do |n|
+  fn = family_names[n % 7].split(":")
+  gn = given_names[n % 8].split(":")
 
   StaffMember.create!(
     email: "#{fn[2]}.#{gn[2]}@example.com",
